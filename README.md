@@ -1,2 +1,2 @@
 # SuplAPI
-> Access Nelonen Media Supla API.
+> Access Nelonen Media Supla API from Rust.
