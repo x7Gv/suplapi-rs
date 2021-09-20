@@ -1,0 +1,22 @@
+[package]
+name = "suplapi"
+version = "0.1.0"
+authors = ["0x7Gv <svn.gv@protonmail.com>"]
+edition = "2018"
+
+description = "Access Nelonen Media Supla API from Rust"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["http-client"]
+http-client = ["reqwest", "url"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+failure = "0.1.8"
+reqwest = { version = "0.11", optional = true }
+async-trait = "0.1"
+tokio = { version = "1", features = ["full"] }
+url = { version = "2.2.2", optional = true }
