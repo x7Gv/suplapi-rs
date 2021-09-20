@@ -4,7 +4,10 @@ version = "0.1.0"
 authors = ["0x7Gv <svn.gv@protonmail.com>"]
 edition = "2018"
 
+licence = "MIT"
+readme = "README.md"
 description = "Access Nelonen Media Supla API from Rust"
+repository = "https://gitlab.com/x7Gv/suplapi-rs/"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
