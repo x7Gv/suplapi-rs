@@ -25,7 +25,7 @@ pub mod http;
 pub mod data {
     use serde::{Serialize, Deserialize};
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Debug, Clone)]
     pub struct Track {
         /// Timestamp at when the track is/was played.
         pub timestamp: i64,
@@ -39,7 +39,7 @@ pub mod data {
         pub song: String,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Debug, Clone)]
     pub struct Playlist {
         /// Collection of played tracks
         pub items: Vec<Track>,
@@ -69,9 +69,8 @@ pub enum Error {
 
 pub type Result<T> = result::Result<T, Error>;
 
-#[derive(Debug)]
-
 /// The main interface to interact with.
+#[derive(Debug, Clone)]
 pub struct SuplAPI<A: http::HttpClient> {
     pub client: A,
     pub base_url: String,

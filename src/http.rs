@@ -15,6 +15,7 @@ pub mod default {
 
     use super::{Error, HttpClient, async_trait};
 
+    #[derive(Debug, Clone)]
     pub struct Client {
         user_agent: String,
     }
