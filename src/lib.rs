@@ -1,13 +1,16 @@
 //! Access Nelonen Media Supla API from Rust.
 //!
 //! # Example(s)
-//! ```
+//! extern crate suplapi;
+//!
 //! let groove_fm = 70;
 //!
-//! let supla = self::SuplAPI::<self::http::default::Client>::default();
-//! let playlist = supla.playlist(groove_fm, 20, None).await.unwrap();
+//! let supla = suplapi::SuplAPI::<suplapi::http::default::Client>::default();
 //!
-//! assert!(playlist.items.len() == 20);
+//! tokio_test::block_on(async {
+//!     let playlist = supla.playlist(groove_fm, 20, None).await.unwrap();
+//!     assert!(playlist.items.len() == 20);
+//! });
 //! ```
 #[cfg(feature="http-client")] extern crate reqwest;
 #[cfg(feature="http-client")] extern crate url;
