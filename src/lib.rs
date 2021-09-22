@@ -1,8 +1,13 @@
 //! Access Nelonen Media Supla API from Rust.
 //!
-//! # Examples
+//! # Example(s)
 //! ```
-//! // TODO: example
+//! let groove_fm = 70;
+//!
+//! let supla = self::SuplAPI::<self::http::default::Client>::default();
+//! let playlist = supla.playlist(groove_fm, 20, None).await.unwrap();
+//!
+//! assert!(playlist.items.len() == 20);
 //! ```
 #[cfg(feature="http-client")] extern crate reqwest;
 #[cfg(feature="http-client")] extern crate url;
@@ -15,6 +20,8 @@ use std::result;
 use data::Playlist;
 
 pub mod http;
+
+pub async fn test() {}
 
 /// Data structures related to API JSON output.
 pub mod data {
