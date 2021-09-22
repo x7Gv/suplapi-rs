@@ -21,8 +21,6 @@ use data::Playlist;
 
 pub mod http;
 
-pub async fn test() {}
-
 /// Data structures related to API JSON output.
 pub mod data {
     use serde::{Serialize, Deserialize};
